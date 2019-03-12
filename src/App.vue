@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Let the project begins... NOW!
+    <header-component></header-component>
+    <br>
+    <div v-for="task in tasks_list"> {{task}}</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import HeaderComponent from './components/HeaderComponent.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    HeaderComponent,
+  },
+  computed: {
+    tasks_list () {
+      return this.$store.state.tasks_list;
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
